@@ -1,5 +1,5 @@
 # InfoVis 2022 Fall Final Project Gallery
-## About the 6 minutes demo
+## About The Demo (8 minutes maximum)
 The demo is to show others how to use your visualization. You may simply open your webpage and tell people what functions it has, e.g., how to high light an object, and what information a chart view shows. Usually, you don't need to prepare slides for it.
 
 ## Grading Rules
