@@ -1,0 +1,129 @@
+Team,Opponent,Goals Made,Goals Conceded,Delta Goals,Wins,Losses,Result
+France,Senegal,0,1,-1,0,1,Group
+Uruguay,Denmark,1,2,-1,0,1,Group
+Ireland,Cameroon,1,1,0,0,0,Group
+Germany,SaudiArabia,8,0,8,1,0,Group
+Argentina,Nigeria,1,0,1,1,0,Group
+Paraguay,SouthAfrica,2,2,0,0,0,Group
+England,Sweden,1,1,0,0,0,Group
+Spain,Slovenia,3,1,2,1,0,Group
+Brazil,Turkey,2,1,1,1,0,Group
+Italy,Ecuador,2,0,2,1,0,Group
+Croatia,Mexico,0,1,-1,0,1,Group
+China,CostaRica,0,2,-2,0,1,Group
+Japan,Belgium,2,2,0,0,0,Group
+Korea,Poland,2,0,2,1,0,Group
+Russia,Tunisia,2,0,2,1,0,Group
+UnitedStates,Portugal,3,2,1,1,0,Group
+Germany,Ireland,1,1,0,0,0,Group
+Denmark,Senegal,1,1,0,0,0,Group
+Cameroon,SaudiArabia,1,0,1,1,0,Group
+France,Uruguay,0,0,0,0,0,Group
+Sweden,Nigeria,2,1,1,1,0,Group
+Argentina,England,0,1,-1,0,1,Group
+Spain,Paraguay,3,1,2,1,0,Group
+SouthAfrica,Slovenia,1,0,1,1,0,Group
+Brazil,China,4,0,4,1,0,Group
+Italy,Croatia,1,2,-1,0,1,Group
+CostaRica,Turkey,1,1,0,0,0,Group
+Japan,Russia,1,0,1,1,0,Group
+Mexico,Ecuador,2,1,1,1,0,Group
+Korea,UnitedStates,1,1,0,0,0,Group
+Portugal,Poland,4,0,4,1,0,Group
+Tunisia,Belgium,1,1,0,0,0,Group
+Denmark,France,2,0,2,1,0,Group
+Senegal,Uruguay,3,3,0,0,0,Group
+SaudiArabia,Ireland,0,3,-3,0,1,Group
+Cameroon,Germany,0,2,-2,0,1,Group
+Sweden,Argentina,1,1,0,0,0,Group
+Nigeria,England,0,0,0,0,0,Group
+Slovenia,Paraguay,1,3,-2,0,1,Group
+SouthAfrica,Spain,2,3,-1,0,1,Group
+CostaRica,Brazil,2,5,-3,0,1,Group
+Turkey,China,3,0,3,1,0,Group
+Ecuador,Croatia,1,0,1,1,0,Group
+Mexico,Italy,1,1,0,0,0,Group
+Tunisia,Japan,0,2,-2,0,1,Group
+Portugal,Korea,0,1,-1,0,1,Group
+Poland,UnitedStates,3,1,2,1,0,Group
+Belgium,Russia,3,2,1,1,0,Group
+Denmark,England,0,3,-3,0,1,Round of Sixteen
+Germany,Paraguay,1,0,1,1,0,Round of Sixteen
+Spain,Ireland,1,1,0,0,0,Round of Sixteen
+Sweden,Senegal,1,2,-1,0,1,Round of Sixteen
+Brazil,Belgium,2,0,2,1,0,Round of Sixteen
+Mexico,UnitedStates,0,2,-2,0,1,Round of Sixteen
+Japan,Turkey,0,1,-1,0,1,Round of Sixteen
+Korea,Italy,2,1,1,1,0,Round of Sixteen
+England,Brazil,1,2,-1,0,1,Quarter Finals
+Germany,UnitedStates,1,0,1,1,0,Quarter Finals
+Senegal,Turkey,0,1,-1,0,1,Quarter Finals
+Spain,Korea,0,0,0,0,0,Quarter Finals
+Germany,Korea,1,0,1,1,0,Semi Finals
+Brazil,Turkey,1,0,1,1,0,Semi Finals
+Korea,Turkey,2,3,-1,0,1,Fourth Place
+Germany,Brazil,0,2,-2,0,1,Runner-Up
+Senegal,France,1,0,1,1,0,Group
+Denmark,Uruguay,2,1,1,1,0,Group
+Cameroon,Ireland,1,1,0,0,0,Group
+SaudiArabia,Germany,0,8,-8,0,1,Group
+Nigeria,Argentina,0,1,-1,0,1,Group
+SouthAfrica,Paraguay,2,2,0,0,0,Group
+Sweden,England,1,1,0,0,0,Group
+Slovenia,Spain,1,3,-2,0,1,Group
+Turkey,Brazil,1,2,-1,0,1,Group
+Ecuador,Italy,0,2,-2,0,1,Group
+Mexico,Croatia,1,0,1,1,0,Group
+CostaRica,China,2,0,2,1,0,Group
+Belgium,Japan,2,2,0,0,0,Group
+Poland,Korea,0,2,-2,0,1,Group
+Tunisia,Russia,0,2,-2,0,1,Group
+Portugal,UnitedStates,2,3,-1,0,1,Group
+Ireland,Germany,1,1,0,0,0,Group
+Senegal,Denmark,1,1,0,0,0,Group
+SaudiArabia,Cameroon,0,1,-1,0,1,Group
+Uruguay,France,0,0,0,0,0,Group
+Nigeria,Sweden,1,2,-1,0,1,Group
+England,Argentina,1,0,1,1,0,Group
+Paraguay,Spain,1,3,-2,0,1,Group
+Slovenia,SouthAfrica,0,1,-1,0,1,Group
+China,Brazil,0,4,-4,0,1,Group
+Croatia,Italy,2,1,1,1,0,Group
+Turkey,CostaRica,1,1,0,0,0,Group
+Russia,Japan,0,1,-1,0,1,Group
+Ecuador,Mexico,1,2,-1,0,1,Group
+UnitedStates,Korea,1,1,0,0,0,Group
+Poland,Portugal,0,4,-4,0,1,Group
+Belgium,Tunisia,1,1,0,0,0,Group
+France,Denmark,0,2,-2,0,1,Group
+Uruguay,Senegal,3,3,0,0,0,Group
+Ireland,SaudiArabia,3,0,3,1,0,Group
+Germany,Cameroon,2,0,2,1,0,Group
+Argentina,Sweden,1,1,0,0,0,Group
+England,Nigeria,0,0,0,0,0,Group
+Paraguay,Slovenia,3,1,2,1,0,Group
+Spain,SouthAfrica,3,2,1,1,0,Group
+Brazil,CostaRica,5,2,3,1,0,Group
+China,Turkey,0,3,-3,0,1,Group
+Croatia,Ecuador,0,1,-1,0,1,Group
+Italy,Mexico,1,1,0,0,0,Group
+Japan,Tunisia,2,0,2,1,0,Group
+Korea,Portugal,1,0,1,1,0,Group
+UnitedStates,Poland,1,3,-2,0,1,Group
+Russia,Belgium,2,3,-1,0,1,Group
+England,Denmark,3,0,3,1,0,Round of Sixteen
+Paraguay,Germany,0,1,-1,0,1,Round of Sixteen
+Ireland,Spain,1,1,0,0,0,Round of Sixteen
+Senegal,Sweden,2,1,1,1,0,Round of Sixteen
+Belgium,Brazil,0,2,-2,0,1,Round of Sixteen
+UnitedStates,Mexico,2,0,2,1,0,Round of Sixteen
+Turkey,Japan,1,0,1,1,0,Round of Sixteen
+Italy,Korea,1,2,-1,0,1,Round of Sixteen
+Brazil,England,2,1,1,1,0,Quarter Finals
+UnitedStates,Germany,0,1,-1,0,1,Quarter Finals
+Turkey,Senegal,1,0,1,1,0,Quarter Finals
+Korea,Spain,0,0,0,0,0,Quarter Finals
+Korea,Germany,0,1,-1,0,1,Semi Finals
+Turkey,Brazil,0,1,-1,0,1,Semi Finals
+Turkey,Korea,3,2,1,1,0,Third Place
+Brazil,Germany,2,0,2,1,0,Winner

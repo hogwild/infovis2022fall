@@ -1,0 +1,129 @@
+Team,Opponent,Goals Made,Goals Conceded,Delta Goals,Wins,Losses,Result
+Russia,SaudiArabia,5,0,5,1,0,Group
+SaudiArabia,Russia,0,5,-5,0,1,Group
+Egypt,Uruguay,0,1,-1,0,1,Group
+Uruguay,Egypt,1,0,1,1,0,Group
+Egypt,Russia,1,3,-2,0,1,Group
+Russia,Egypt,3,1,2,1,0,Group
+Uruguay,SaudiArabia,1,0,1,1,0,Group
+SaudiArabia,Uruguay,0,1,-1,0,1,Group
+Uruguay,Russia,3,0,3,1,0,Group
+Russia,Uruguay,0,3,-3,0,1,Group
+SaudiArabia,Egypt,2,1,1,1,0,Group
+Egypt,SaudiArabia,1,2,-1,0,1,Group
+Morocco,Iran,0,1,-1,0,1,Group
+Iran,Morocco,1,0,1,1,0,Group
+Portugal,Spain,3,3,0,0,0,Group
+Spain,Portugal,3,3,0,0,0,Group
+Portugal,Morocco,1,0,1,1,0,Group
+Morocco,Portugal,0,1,-1,0,1,Group
+Iran,Spain,0,1,-1,0,1,Group
+Spain,Iran,1,0,1,1,0,Group
+Iran,Portugal,1,1,0,0,0,Group
+Portugal,Iran,1,1,0,0,0,Group
+Spain,Morocco,2,2,0,0,0,Group
+Morocco,Spain,2,2,0,0,0,Group
+France,Australia,2,1,1,1,0,Group
+Australia,France,1,2,-1,0,1,Group
+Peru,Denmark,0,1,-1,0,1,Group
+Denmark,Peru,1,0,1,1,0,Group
+Denmark,Australia,1,1,0,0,0,Group
+Australia,Denmark,1,1,0,0,0,Group
+France,Peru,1,0,1,1,0,Group
+Peru,France,0,1,-1,0,1,Group
+Denmark,France,0,0,0,0,0,Group
+France,Denmark,0,0,0,0,0,Group
+Australia,Peru,0,2,-2,0,1,Group
+Peru,Australia,2,0,2,1,0,Group
+Argentina,Iceland,1,1,0,0,0,Group
+Iceland,Argentina,1,1,0,0,0,Group
+Croatia,Nigeria,2,0,2,1,0,Group
+Nigeria,Croatia,0,2,-2,0,1,Group
+Argentina,Croatia,0,3,-3,0,1,Group
+Croatia,Argentina,3,0,3,1,0,Group
+Nigeria,Iceland,2,0,2,1,0,Group
+Iceland,Nigeria,0,2,-2,0,1,Group
+Nigeria,Argentina,1,2,-1,0,1,Group
+Argentina,Nigeria,2,1,1,1,0,Group
+Iceland,Croatia,1,2,-1,0,1,Group
+Croatia,Iceland,2,1,1,1,0,Group
+Costa Rica,Serbia,0,1,-1,0,1,Group
+Serbia,Costa Rica,1,0,1,1,0,Group
+Brazil,Switzerland,1,1,0,0,0,Group
+Switzerland,Brazil,1,1,0,0,0,Group
+Brazil,Costa Rica,2,0,2,1,0,Group
+Costa Rica,Brazil,0,2,-2,0,1,Group
+Serbia,Switzerland,1,2,-1,0,1,Group
+Switzerland,Serbia,2,1,1,1,0,Group
+Serbia,Brazil,0,2,-2,0,1,Group
+Brazil,Serbia,2,0,2,1,0,Group
+Costa Rica,Switzerland,2,2,0,0,0,Group
+Switzerland,Costa Rica,2,2,0,0,0,Group
+Germany,Mexico,0,1,-1,0,1,Group
+Mexico,Germany,1,0,1,1,0,Group
+Sweden,Korea,1,0,1,1,0,Group
+Korea,Sweden,0,1,-1,0,1,Group
+Germany,Sweden,2,1,1,1,0,Group
+Sweden,Germany,1,2,-1,0,1,Group
+Mexico,Korea,1,2,-1,0,1,Group
+Korea,Mexico,2,1,1,1,0,Group
+Germany,Korea,0,2,-2,0,1,Group
+Korea,Germany,2,0,2,1,0,Group
+Mexico,Sweden,0,3,-3,0,1,Group
+Sweden,Mexico,3,0,3,1,0,Group
+Belgium,Panama,3,0,3,1,0,Group
+Panama,Belgium,0,3,-3,0,1,Group
+Tunisia,England,1,2,-1,0,1,Group
+England,Tunisia,2,1,1,1,0,Group
+Tunisia,Panama,2,1,1,1,0,Group
+Panama,Tunisia,1,2,-1,0,1,Group
+England,Belgium,0,1,-1,0,1,Group
+Belgium,England,1,0,1,1,0,Group
+Tunisia,Belgium,2,5,-3,0,1,Group
+Belgium,Tunisia,5,2,3,1,0,Group
+Panama,England,1,6,-5,0,1,Group
+England,Panama,6,1,5,1,0,Group
+Columbia,Japan,1,2,-1,0,1,Group
+Japan,Columbia,2,1,1,1,0,Group
+Senegal,Poland,2,1,1,1,0,Group
+Poland,Senegal,1,2,-1,0,1,Group
+Columbia,Senegal,1,0,1,1,0,Group
+Senegal,Columbia,0,1,-1,0,1,Group
+Japan,Poland,0,1,-1,0,1,Group
+Poland,Japan,1,0,1,1,0,Group
+Columbia,Poland,3,0,3,1,0,Group
+Poland,Columbia,0,3,-3,0,1,Group
+Japan,Senegal,2,2,0,0,0,Group
+Senegal,Japan,2,2,0,0,0,Group
+Uruguay,Portugal,2,1,1,1,0,Round of Sixteen
+Portugal,Uruguay,1,2,-1,0,1,Round of Sixteen
+France,Argentina,4,3,1,1,0,Round of Sixteen
+Argentina,France,3,4,-1,0,1,Round of Sixteen
+Brazil,Mexico,2,0,2,1,0,Round of Sixteen
+Mexico,Brazil,0,2,-2,0,1,Round of Sixteen
+Belgium,Japan,3,2,1,1,0,Round of Sixteen
+Japan,Belgium,2,3,-1,0,1,Round of Sixteen
+Spain,Russia,1,1,0,0,1,Round of Sixteen
+Russia,Spain,1,1,0,1,0,Round of Sixteen
+Croatia,Denmark,1,1,0,1,0,Round of Sixteen
+Denmark,Croatia,1,1,0,0,1,Round of Sixteen
+Sweden,Switzerland,1,0,1,1,0,Round of Sixteen
+Switzerland,Sweden,0,1,-1,0,1,Round of Sixteen
+Columbia,England,1,1,0,0,1,Round of Sixteen
+England,Columbia,1,1,0,1,0,Round of Sixteen
+Uruguay,France,0,2,-2,0,1,Quarter Finals
+France,Uruguay,2,0,2,1,0,Quarter Finals
+Brazil,Belgium,1,2,-1,0,1,Quarter Finals
+Belgium,Brazil,2,1,1,1,0,Quarter Finals
+Russia,Croatia,2,2,0,0,1,Quarter Finals
+Croatia,Russia,2,2,0,1,0,Quarter Finals
+Sweden,England,0,2,-2,0,1,Quarter Finals
+England,Sweden,2,0,2,1,0,Quarter Finals
+France,Belgium,1,0,1,1,0,Semi Finals
+Belgium,France,0,1,-1,0,1,Semi Finals
+Croatia,England,2,1,1,1,0,Semi Finals
+England,Croatia,1,2,-1,0,1,Semi Finals
+France,Croatia,4,2,2,1,0,Winner
+Croatia,France,2,4,-2,0,1,Runner-Up
+Belgium,England,2,0,2,1,0,Third Place
+England,Belgium,0,2,-2,0,1,Fourth Place

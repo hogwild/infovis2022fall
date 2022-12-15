@@ -1,0 +1,129 @@
+Team,Opponent,Goals Made,Goals Conceded,Delta Goals,Wins,Losses,Result
+Bulgaria,Italy,1,1,0,0,0,Group
+Canada,France,0,1,-1,0,1,Group
+Spain,Brazil,0,1,-1,0,1,Group
+SovietUnion,Hungary,6,0,6,1,0,Group
+Argentina,Korea,3,1,2,1,0,Group
+Morocco,Poland,0,0,0,0,0,Group
+Algeria,NorthernIreland,1,1,0,0,0,Group
+Belgium,Mexico,1,2,-1,0,1,Group
+Portugal,England,1,0,1,1,0,Group
+Paraguay,Iraq,1,0,1,1,0,Group
+Scotland,Denmark,0,1,-1,0,1,Group
+Uruguay,GermanyFR,1,1,0,0,0,Group
+Italy,Argentina,1,1,0,0,0,Group
+France,SovietUnion,1,1,0,0,0,Group
+Korea,Bulgaria,1,1,0,0,0,Group
+Hungary,Canada,2,0,2,1,0,Group
+Brazil,Algeria,1,0,1,1,0,Group
+England,Morocco,0,0,0,0,0,Group
+NorthernIreland,Spain,1,2,-1,0,1,Group
+Mexico,Paraguay,1,1,0,0,0,Group
+Poland,Portugal,1,0,1,1,0,Group
+Iraq,Belgium,1,2,-1,0,1,Group
+Denmark,Uruguay,6,1,5,1,0,Group
+GermanyFR,Scotland,2,1,1,1,0,Group
+Hungary,France,0,3,-3,0,1,Group
+SovietUnion,Canada,2,0,2,1,0,Group
+Korea,Italy,2,3,-1,0,1,Group
+Argentina,Bulgaria,2,0,2,1,0,Group
+Paraguay,Belgium,2,2,0,0,0,Group
+Iraq,Mexico,0,1,-1,0,1,Group
+Portugal,Morocco,1,3,-2,0,1,Group
+England,Poland,3,0,3,1,0,Group
+NorthernIreland,Brazil,0,3,-3,0,1,Group
+Algeria,Spain,0,3,-3,0,1,Group
+Scotland,Uruguay,0,0,0,0,0,Group
+Denmark,GermanyFR,2,0,2,1,0,Group
+SovietUnion,Belgium,3,4,-1,0,1,Round of Sixteen
+Mexico,Bulgaria,2,0,2,1,0,Round of Sixteen
+Argentina,Uruguay,1,0,1,1,0,Round of Sixteen
+Brazil,Poland,4,0,4,1,0,Round of Sixteen
+Italy,France,0,2,-2,0,1,Round of Sixteen
+Morocco,GermanyFR,0,1,-1,0,1,Round of Sixteen
+England,Paraguay,3,0,3,1,0,Round of Sixteen
+Denmark,Spain,1,5,-4,0,1,Round of Sixteen
+Brazil,France,1,1,0,0,0,Quarter Finals
+GermanyFR,Mexico,0,0,0,0,0,Quarter Finals
+Spain,Belgium,1,1,0,0,0,Quarter Finals
+Argentina,England,2,1,1,1,0,Quarter Finals
+France,GermanyFR,0,2,-2,0,1,Semi Finals
+Argentina,Belgium,2,0,2,1,0,Semi Finals
+France,Belgium,4,2,2,1,0,Third Place
+Argentina,GermanyFR,3,2,1,1,0,Winner
+Italy,Bulgaria,1,1,0,0,0,Group
+France,Canada,1,0,1,1,0,Group
+Brazil,Spain,1,0,1,1,0,Group
+Hungary,SovietUnion,0,6,-6,0,1,Group
+Korea,Argentina,1,3,-2,0,1,Group
+Poland,Morocco,0,0,0,0,0,Group
+NorthernIreland,Algeria,1,1,0,0,0,Group
+Mexico,Belgium,2,1,1,1,0,Group
+England,Portugal,0,1,-1,0,1,Group
+Iraq,Paraguay,0,1,-1,0,1,Group
+Denmark,Scotland,1,0,1,1,0,Group
+GermanyFR,Uruguay,1,1,0,0,0,Group
+Argentina,Italy,1,1,0,0,0,Group
+SovietUnion,France,1,1,0,0,0,Group
+Bulgaria,Korea,1,1,0,0,0,Group
+Canada,Hungary,0,2,-2,0,1,Group
+Algeria,Brazil,0,1,-1,0,1,Group
+Morocco,England,0,0,0,0,0,Group
+Spain,NorthernIreland,2,1,1,1,0,Group
+Paraguay,Mexico,1,1,0,0,0,Group
+Portugal,Poland,0,1,-1,0,1,Group
+Belgium,Iraq,2,1,1,1,0,Group
+Uruguay,Denmark,1,6,-5,0,1,Group
+Scotland,GermanyFR,1,2,-1,0,1,Group
+France,Hungary,3,0,3,1,0,Group
+Canada,SovietUnion,0,2,-2,0,1,Group
+Italy,Korea,3,2,1,1,0,Group
+Bulgaria,Argentina,0,2,-2,0,1,Group
+Belgium,Paraguay,2,2,0,0,0,Group
+Mexico,Iraq,1,0,1,1,0,Group
+Morocco,Portugal,3,1,2,1,0,Group
+Poland,England,0,3,-3,0,1,Group
+Brazil,NorthernIreland,3,0,3,1,0,Group
+Spain,Algeria,3,0,3,1,0,Group
+Uruguay,Scotland,0,0,0,0,0,Group
+GermanyFR,Denmark,0,2,-2,0,1,Group
+Belgium,SovietUnion,4,3,1,1,0,Round of Sixteen
+Bulgaria,Mexico,0,2,-2,0,1,Round of Sixteen
+Uruguay,Argentina,0,1,-1,0,1,Round of Sixteen
+Poland,Brazil,0,4,-4,0,1,Round of Sixteen
+France,Italy,2,0,2,1,0,Round of Sixteen
+GermanyFR,Morocco,1,0,1,1,0,Round of Sixteen
+Paraguay,England,0,3,-3,0,1,Round of Sixteen
+Spain,Denmark,5,1,4,1,0,Round of Sixteen
+France,Brazil,1,1,0,0,0,Quarter Finals
+Mexico,GermanyFR,0,0,0,0,0,Quarter Finals
+Belgium,Spain,1,1,0,0,0,Quarter Finals
+England,Argentina,1,2,-1,0,1,Quarter Finals
+GermanyFR,France,2,0,2,1,0,Semi Finals
+Belgium,Argentina,0,2,-2,0,1,Semi Finals
+Belgium,France,2,4,-2,0,1,Fourth Place
+GermanyFR,Argentina,2,3,-1,0,1,Runner-Up
+Sweden,Paraguay,1,0,1,1,0,Group
+Sweden,England,2,2,0,0,0,Group
+Sweden,Trinidad and Tobago,0,0,0,0,0,Group
+Switzerland,Ukraine,0,0,0,0,0,Round of Sixteen
+Switzerland,Korea,2,0,2,1,0,Group
+Switzerland,France,0,0,0,0,0,Group
+Switzerland,Togo,2,0,2,1,0,Group
+Togo,Switzerland,0,2,-2,0,1,Group
+Togo,France,0,2,-2,0,1,Group
+Togo,Korea,1,2,-1,0,1,Group
+Trinidad and Tobago,Sweden,0,0,0,0,0,Group
+Trinidad and Tobago,England,0,2,-2,0,1,Group
+Trinidad and Tobago,Paraguay,0,2,-2,0,1,Group
+Tunisia,Saudi Arabia,2,2,0,0,0,Group
+Tunisia,Spain,1,3,-2,0,1,Group
+Tunisia,Ukraine,0,1,-1,0,1,Group
+Ukraine,Switzerland,0,0,0,0,0,Round of Sixteen
+Ukraine,Italy,0,3,-3,0,1,Quarter Finals
+Ukraine,Tunisia,1,0,1,1,0,Group
+Ukraine,Spain,0,4,-4,0,1,Group
+Ukraine,Saudi Arabia,4,0,4,1,0,Group
+UnitedStates,Czech Republic,0,3,-3,0,1,Group
+UnitedStates,Italy,1,1,0,0,0,Group
+UnitedStates,Ghana,1,2,-1,0,1,Group
