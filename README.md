@@ -16,33 +16,33 @@ Also, you may [click here](){:target="_blank"} to get the whole list of projects
 
 ## [Team 1: PS4 Game Sales Analysis](./team1/vediogame.html){:target="_blank"} 
 - Authors: Ran Xu, Yuchen Zhou
-- [Review the work](){:target="_blank"} 
+- [Review the work](https://forms.gle/AnoaKrfpB1MJMBcFA){:target="_blank"} 
 
 ## [Team 2: Does Vaccination Work?](./team2/index.html){:target="_blank"} 
 - Authors: Shixuan Zheng, Scott Ye, Chengyu Zhang 
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/k4E8zAZ87NQyvtj28){:target="_blank"}
 
 ## [Team 3: Where To Find The Protein?](./team3/index.html){:target="_blank"} 
 - Authors: Ivana Li, Tianqing Yu 
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/QqkaqkmVqa9CjbPh7){:target="_blank"}
 
 ## [Team 4: An Visualization of World Cup](./team4/mainpage/fp.html){:target="_blank"} 
 - Authors: Zhenwen Zhang, Haohai Pang, Xiangjian Wu
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/TqzQG8DjAWLujmHDA){:target="_blank"}
 
 ## [Team 5: Why People Die?](./team5/index.html){:target="_blank"} 
 - Authors: Zhinuo Wang, Hongjin Zhu 
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/LKe4Cnh6ZeHqX89e6){:target="_blank"}
 
 ## [Team 6: Regional Gross Product And Garbage Disposal Volume In China](./team6/index.html){:target="_blank"} 
 - Authors: Penghao Weng, Yishan Chen
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/HsWPUVVbCAEXS6AfA){:target="_blank"}
 
 ## [Team 7: Understanding Football Success Across Regions](./team7/index.html){:target="_blank"} 
 - Authors: Riley Whitt, Yi Wang
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/rZmNTSd6R1ZfjeXt5){:target="_blank"}
 
 ## [Team 8: Global Pandemics: Infection, Death, And Vaccination](./team8/index.html){:target="_blank"} 
 - Authors: Alivn Mo, Xingchen Gao
-- [Review the work](){:target="_blank"}
+- [Review the work](https://forms.gle/NsFxBcTMQNCNizNr5){:target="_blank"}
 
