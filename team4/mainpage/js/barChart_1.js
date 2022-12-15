@@ -79,7 +79,7 @@ class BarChart {
             })
             .on("click", function(d) {
                 
-                let a = (2022-d.year) / 4;
+                // let a = (2022-d.year) / 4;
                 // https://hogwild.github.io/infovis2022fall/team4/mainpage/fp.html
                 window.open('https://hogwild.github.io/infovis2022fall/team4/'+d.year+'/'+d.year+'.html');
             })
