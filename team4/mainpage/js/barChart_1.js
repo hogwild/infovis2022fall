@@ -80,7 +80,8 @@ class BarChart {
             .on("click", function(d) {
                 
                 let a = (2022-d.year) / 4;
-                window.open('http://127.0.0.1:550'+a+'/'+d.year+'.html');
+                // https://hogwild.github.io/infovis2022fall/team4/mainpage/fp.html
+                window.open('https://hogwild.github.io/infovis2022fall/team4/'+d.year+'/'+d.year+'.html');
             })
             .on("touch", function(d) {
                 window.barChart.worldMap.updateMap(d);
