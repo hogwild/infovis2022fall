@@ -18,7 +18,7 @@ Also, you may [click here](){:target="_blank"} to get the whole list of projects
 - Authors: Ran Xu, Yuchen Zhou
 - [Review the work](){:target="_blank"} 
 
-## [Team 2: Does Vaccination Work?](https://zoexiao0516.github.io/InfoViz/Project/dist/index.html){:target="_blank"} 
+## [Team 2: Does Vaccination Work?](./team2/index.html){:target="_blank"} 
 - Authors: Shixuan Zheng, Scott Ye, Chengyu Zhang 
 - [Review the work](){:target="_blank"}
 
