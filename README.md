@@ -14,7 +14,7 @@ Please complete the review by this Friday (Dec 16), Shanghai time. Thank you.
 
 Also, you may [click here](){:target="_blank"} to get the whole list of projects. 
 
-## [Team 1: PS4 Game Sales Analysis](./team1/index.html){:target="_blank"} 
+## [Team 1: PS4 Game Sales Analysis](./team1/vediogame.html){:target="_blank"} 
 - Authors: Ran Xu, Yuchen Zhou
 - [Review the work](){:target="_blank"} 
 
