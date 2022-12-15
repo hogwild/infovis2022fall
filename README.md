@@ -26,7 +26,7 @@ Also, you may [click here](){:target="_blank"} to get the whole list of projects
 - Authors: Ivana Li, Tianqing Yu 
 - [Review the work](){:target="_blank"}
 
-## [Team 4: An Visualization of World Cup](./team4/index.html){:target="_blank"} 
+## [Team 4: An Visualization of World Cup](./team4/mainpage/fp.html){:target="_blank"} 
 - Authors: Zhenwen Zhang, Haohai Pang, Xiangjian Wu
 - [Review the work](){:target="_blank"}
 
