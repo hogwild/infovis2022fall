@@ -12,7 +12,7 @@ There are 30 points for 7 evaluation questions. Click the **Review the work** to
 
 Please complete the review by this Friday (Dec 16), Shanghai time. Thank you.
 
-Also, you may [click here](https://docs.google.com/spreadsheets/d/1PpQt_VVVTGZRGgv25c7PaYZlqVJn-_kqFKJEtdrNzz8/edit?usp=sharing){:target="_blank"} to get the whole list of projects. 
+Also, you may [click here](){:target="_blank"} to get the whole list of projects. 
 
 ## [Team 1: PS4 Game Sales Analysis](./team1/index.html){:target="_blank"} 
 - Authors: Ran Xu, Yuchen Zhou
