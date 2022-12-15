@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Sales Dataset</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-path.v2.min.js"></script>
+    <script src="https://d3js.org/d3-shape.v2.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v2.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script> 
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.js"></script>
+    
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <h1> Video Game Sales Visualization</h1>
+    <h3>This page visualize the relationship between video game sales and various related features, including genre, region, critic score, user score and platform.</h3>
+    <p><font color="steelblue">The two scatterplots presents the relatioship between sales and critic score/user score respectively</font></p>
+    <!-- <p><font color="steelblue">  -There is a clear positive relation between sales and critic score</font></p>
+    <p><font color="steelblue">  -There is no clear pattern revealed between sales and critic score</font></p> -->
+    <p><font color="steelblue">Hover your mouse on each point and see which region/genre group it belongs to.</font></p>
+    <div id="root"></div> 
+    <script type="text/babel">
+    const WIDTH = 1000;
+    const HEIGHT = 600;
+    const margin = { top: 20, right: 40, bottom: 20, left: 40 };
+    const csvUrl = "https://raw.githubusercontent.com/zycyz/Info-Vis/main/final_data.csv";
+    const mapUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
+    function useMap(jsonPath) {
+        const [data, setData] = React.useState(null);
+        React.useEffect(() => {
+            d3.json(jsonPath).then(topoJsonData => {
+                setData(
+                    topojson.feature(topoJsonData, topoJsonData.objects.countries),
+                  )});
+        }, []);
+        return data;
+    }
+    function useData(csvPath){
+        const [dataAll, setData] = React.useState(null);
+        React.useEffect(() => {
+            d3.csv(csvPath).then(data => {
+                data.forEach(d => {
+                d.sales = +d.sales;
+                d.year = +d.year;
+                d.global_sales = +d.global_sales;
+                d.user_score = +d.user_score
+                });
+                setData(data);
+            });
+        }, []);
+        return dataAll;
+    }
+
+    function getTree( data, attrs ) {
+        const getLevels = (attr) => {
+            const attrArray = data.map(d => d[attr]);
+            const levels = attrArray.filter( (d, idx) => attrArray.indexOf(d) === idx).sort();
+            return levels.map( d => {return {"name": d, "attr": attr}});
+        };
+        const levels = attrs.map( d => getLevels(d));
+        // console.log(levels);
+        const getJsonTree = function( data, levels ) {
+            let itemArr = [];
+            if(levels.length === 0) {
+                //itemArr.push(data);
+                return null;
+            }
+            const currentLevel = levels[0];
+            for (let i = 0; i < currentLevel.length; i++) {
+                let node = currentLevel[i];
+                let newData = data.filter(d => d[currentLevel[0].attr] === currentLevel[i].name)
+                if (newData.length > 0){
+                    let newNode = {};
+                    newNode.points = newData;
+                    newNode.name = node.name;
+                    newNode.attr = node.attr;
+                    newNode.value = newData.map(d => d.sales).reduce((sum, d) => sum+d, 0); //survival rate 
+                    let children = getJsonTree(newData, levels.slice(1));
+                    if (children) {
+                        newNode.children = children;
+                    }
+                    itemArr.push(newNode);
+                }
+            }
+            return itemArr;
+        };
+        return getJsonTree(data, levels);
+    }
+    function ScatterPlot(props) {
+        const { width, height, data, selectedCell, setSelectedCell, attributes } = props;
+        // console.log(attributes)
+        const margin = { top: 20, right: 40, bottom: 20, left: 40, gap: 40 };
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+        const xScale = d3.scaleLinear().range([0, innerWidth])
+            .domain([0, d3.max(data, d => d.sales)]).nice();
+        const yScale = d3.scaleLinear().range([(innerHeight-margin.gap), 0])
+            .domain([0, d3.max(data, d => d.critic_score)]).nice();
+        const colormap = d3.schemeCategory10;
+        const radius = 3;
+        const setColor = (d) => {
+            if(selectedCell){
+                //console.log(selectedCell);
+                if (selectedCell[0].gname) {
+                    if (selectedCell[0].gname === d.gname) {
+                    return "#FFA500"
+                    } else {
+                        return "#B0C4DE"
+                    }
+                }
+                for (let i = 0; i < selectedCell.length; i++){
+                    if (selectedCell[i].name !== d[selectedCell[i].attr]){
+                        return "#B0C4DE"
+                    };
+                }
+                return "#FFA500";
+            }
+            return "#B0C4DE";
+        }
+        const onMouseEnter = (d) => {
+            const items = attributes.reverse().map( attr => {
+                return { "name": d[attr], "attr": attr, "gname":d.gname }
+            });
+            // console.log(d);
+            setSelectedCell(items);
+        }
+        //console.log(colormap[0]) 
+        return <svg width={width} height={height} transform={`translate(${margin.left}, ${margin.top-20})`}>
+        <g transform={`translate(${margin.left}, ${margin.top})`}>
+            <line y1={innerHeight-margin.gap} x2={innerWidth} y2={innerHeight-margin.gap} stroke={"black"} strokeWidth={2}/> 
+            {xScale.ticks().map( (tick, idx) => {
+                return <g key={idx+'xtick'} transform={`translate(${xScale(tick)}, ${innerHeight})`}>
+                    <line y1={-50} y2={margin.gap-80} stroke={"black"}/>
+                    <line y1={-margin.gap} y2={-innerHeight} stroke={"gray"} opacity={0.3}/>
+                    <line y1={margin.gap} y2={innerHeight} stroke={"gray"} opacity={0.3}/>
+                    <text style={{textAnchor:"middle"}} y={-20} >
+                        {tick}
+                    </text>
+                </g>
+            })}
+            <text x={innerWidth-100} y={innerHeight-43}>{"Sales(million$)"}</text>
+            <text x={0} y={-5}>{"Critic Score"}</text>
+            <line y1={innerHeight+margin.gap} x2={innerWidth} y2={innerHeight+margin.gap} stroke={"black"} strokeWidth={2}/>
+            <line y2={innerHeight-margin.gap} stroke={"black"} strokeWidth={2} />
+            {yScale.ticks().map( (tick, idx) => {
+                return <g key={idx+'ytick-s'} transform={`translate(${0}, ${yScale(tick)})`}>
+                        <text style={{textAnchor:"end"}} x={-5} >
+                            {tick}
+                        </text>
+                        <line x1={-5} stroke={"black"} />
+                        <line x2={innerWidth} stroke={"gray"} opacity={0.3}/>
+                    </g>
+            })}
+
+            {data.map( (d, idx) => {
+                return <circle key={idx+"point"} cx={xScale(d.sales)} cy={yScale(d.critic_score)} r={radius} stroke={"black"} fill={setColor(d)}
+                onMouseEnter={() => onMouseEnter(d)} onMouseOut={() => setSelectedCell(null)}/>
+            })}
+            
+        
+            </g>
+        </svg>
+
+    }
+
+
+
+    function ScatterPlot1(props) {
+        const { width, height, data, selectedCell, setSelectedCell, attributes } = props;
+        // console.log(attributes)
+        // const dataf=data.filter( d=> {
+        // return d.sales <= 2})
+        const margin = { top: 20, right: 40, bottom: 20, left: 40, gap: 40 };
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+        const xScale = d3.scaleLinear().range([0, innerWidth])
+            .domain([0, d3.max(data, d => d.sales)]).nice();
+        const yScale = d3.scaleLinear().range([(innerHeight-margin.gap), 0])
+            .domain([0, d3.max(data, d => d.user_score)]).nice();
+        const colormap = d3.schemeCategory10;
+        const radius = 3;
+        const setColor = (d) => {
+            if(selectedCell){
+                //console.log(selectedCell);
+                if (selectedCell[0].gname) {
+                    if (selectedCell[0].gname === d.gname) {
+                    return "#FFA500"
+                    } else {
+                        return "#B0C4DE"
+                    }
+                }
+                for (let i = 0; i < selectedCell.length; i++){
+                    if (selectedCell[i].name !== d[selectedCell[i].attr]){
+                        return "#B0C4DE"
+                    };
+                }
+                return "#FFA500";
+            }
+            return "#B0C4DE";
+        }
+        const onMouseEnter = (d) => {
+            const items = attributes.reverse().map( attr => {
+                return { "name": d[attr], "attr": attr, "gname":d.gname }
+            });
+            // console.log(d);
+            setSelectedCell(items);
+        }
+        //console.log(colormap[0]) 
+        return <svg width={width} height={height} transform={`translate(${margin.left}, ${margin.top-20})`}>
+        <g transform={`translate(${margin.left}, ${margin.top})`}>
+            <line y1={innerHeight-margin.gap} x2={innerWidth} y2={innerHeight-margin.gap} stroke={"black"} strokeWidth={2}/> 
+            {xScale.ticks().map( (tick, idx) => {
+                return <g key={idx+'xtick'} transform={`translate(${xScale(tick)}, ${innerHeight})`}>
+                    <line y1={-50} y2={margin.gap-80} stroke={"black"}/>
+                    <line y1={-margin.gap} y2={-innerHeight} stroke={"gray"} opacity={0.3}/>
+                    <line y1={margin.gap} y2={innerHeight} stroke={"gray"} opacity={0.3}/>
+                    <text style={{textAnchor:"middle"}} y={-20} >
+                        {tick}
+                    </text>
+                </g>
+            })}
+            <text x={innerWidth-100} y={innerHeight-43}>{"Sales(million$)"}</text>
+            <text x={0} y={-5}>{"User Score"}</text>
+            <line y1={innerHeight+margin.gap} x2={innerWidth} y2={innerHeight+margin.gap} stroke={"black"} strokeWidth={2}/>
+            <line y2={innerHeight-margin.gap} stroke={"black"} strokeWidth={2} />
+            {yScale.ticks().map( (tick, idx) => {
+                return <g key={idx+'ytick-s'} transform={`translate(${0}, ${yScale(tick)})`}>
+                        <text style={{textAnchor:"end"}} x={-5} >
+                            {tick}
+                        </text>
+                        <line x1={-5} stroke={"black"} />
+                        <line x2={innerWidth} stroke={"gray"} opacity={0.3}/>
+                    </g>
+            })}
+
+            {data.map( (d, idx) => {
+                return <circle key={idx+"point"} cx={xScale(d.sales)} cy={yScale(d.user_score)} r={radius} stroke={"black"} fill={setColor(d)} opacity={0.8}
+                onMouseEnter={() => onMouseEnter(d)} onMouseOut={() => setSelectedCell(null)}/>
+            })}
+            
+        
+            </g>
+        </svg>
+    }
+
+
+    function TreeMapText(props) {
+        const { d } = props;
+        return <foreignObject width={d.x1-d.x0} height={d.y1-d.y0}>
+            <div >
+                <p>{d.ancestors().reverse().slice(1).map((d, idx) => d.data.name)
+                    .join("\n")+"\nSales:"+(d.value)}</p>
+            </div>
+            </foreignObject>
+    }
+
+    function TreeMapText(props) {
+        const { d } = props;
+        return <foreignObject width={d.x1-d.x0} height={d.y1-d.y0}>
+            <div >
+                <p>{d.ancestors().reverse().slice(1).map((d, idx) => d.data.name)
+                    .join("\n")+"\nSales:"+(d.value)}</p>
+            </div>
+            </foreignObject>
+    }
+    function TreeMap(props) {
+        const { width, height, tree, selectNode, setSelectedNode, selectedCell, setSelectedCell, setTooltipX, setTooltipY} = props;
+        const margin = { top: 20, right: 40, bottom: 20, left: 40, gap: 40 };
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
+        const root = d3.treemap().size([innerWidth, innerHeight]).padding(2)
+            .round(true)(d3.hierarchy(tree).sum(d => d.children ? 0 : d.value))
+            .sort((a, b) => b.value - a.value);
+        const leaves = root.leaves();
+        // console.log(leaves[0].ancestors());
+        const parents = root.leaves().map( d => d.parent.data.name);
+        const parentsCategories = parents.filter( (d, idx) => parents.indexOf(d) === idx );
+        const color = d3.scaleOrdinal(d3.schemeDark2).domain(parentsCategories);
+        const firstLayer = root.descendants()[0].children;
+        const compareAncestors = (ancestors) => {
+            if(!selectedCell){
+                return false;
+            }
+            for(let i = 0; i < ancestors.length; i++){
+                if (selectedCell[i].name !== ancestors[i].name) {
+                    return false;
+                }
+            }
+            return true;
+        };
+        return <svg width={width} height={height}>
+        <g transform={`translate(${margin.left}, ${margin.right})`}>
+            <text  style={{fill:"steelblue"}}>Hover your mouse on a cell to see the platform share in this group</text>
+     
+            {root.leaves().map( (d, idx) => {
+                const ancestors = d.ancestors().map(d => {return {"name":d.data.name, "attr":d.data.attr}}).slice(0, -1);
+                // console.log(ancestors);
+                return <g key={idx+"treemap"} transform={`translate(${d.x0}, ${d.y0})`} 
+                    onMouseOver={(event)=> {
+                        setSelectedCell(ancestors);
+                        setSelectedNode(d);
+                        setTooltipX(event.pageX);
+                        setTooltipY(event.pageY);
+                    }}
+                    onMouseOut={()=>{
+                        setSelectedCell(null);
+                        setSelectedNode(null);
+                        setTooltipX(null);
+                        setTooltipY(null);
+                    
+                    }}>
+                    <rect width={d.x1-d.x0} height={d.y1-d.y0} stroke={"none"} fill={selectedCell && compareAncestors(ancestors) ? "red":color(d.parent.data.name)} opacity={0.5}/>
+                    <TreeMapText d={d} />
+                </g>
+            })}
+            {firstLayer.map( (d, idx) => {
+                return <g key={idx+"outerline"} transform={`translate(${d.x0}, ${d.y0})`}>
+                    <rect width={d.x1-d.x0} height={d.y1-d.y0} stroke={"black"} fill={"none"}/>
+                    <text style={{fontSize:"6em"}} x={ (d.x1-d.x0)/2 } y={ (d.y1-d.y0)/2 } textAnchor={"middle"} opacity={0.3} 
+                    transform={`rotate(${(d.x1-d.x0)>(d.y1-d.y0)? 0: 90}, ${(d.x1-d.x0)/2}, ${(d.y1-d.y0)/2})`}>
+                        {d.data.name}
+                        </text>
+                    </g>
+            })}
+            </g>
+        </svg>
+    }
+    
+    function Tooltip(props) {
+        const {d, left, top} = props;
+        //console.log(d);
+        if (left === null) {
+            return <div></div>;
+        } else {
+            const divStyle = {
+                position: "absolute",
+                textAlign: "left",
+                width: "100px",
+                height: "80px",
+                font: "12px sans-serif",
+                background: "lightblue",
+                border: "0px",
+                borderRadius: "8px",
+                pointerEvents: "none",
+                left: `${left}px`,
+                top: `${top}px`
+            };
+            return <div style={divStyle} >
+                <p>{d.ancestors().reverse().slice(1).map((d, idx) => d.data.name)
+                    .join("\n")+"\nSales:"+d.value}</p>
+                </div>
+        };  
+    }
+    
+    function Dropdown (props) {
+        const { options, id, selectedValue, onSelectedValueChange } = props;
+        return <select id={id} defaultValue={selectedValue} onChange={event => {console.log(event.target); onSelectedValueChange(event.target.value)}}>
+            {options.map( ({value, label}) => {
+                return <option key={label} value={value} >
+                    {label}
+                </option>
+            })}
+        </select>
+    }
+
+    function BarChart(props) {
+        const { offsetX, offsetY,width, height, data } = props;  
+      
+        if (!data==0) {
+            console.log(data)
+            const xScale = d3.scaleBand().range([0, width]).domain(data.map(function(d) { return d.platform; })).padding(0.2);
+            
+            const yScaleu = d3.scaleLinear().range([height, 0]).domain([0, d3.max(data, d => d.sales)]).nice();
+            
+            const ticks_x = xScale.domain();
+            const ticks_yu = yScaleu.ticks(10);
+            
+    
+
+
+            return <svg width={width+500} height={height*2} transform={`translate(${width*2-150}, ${-height-100})`}>
+            <g transform={`translate(${margin.left}, ${margin.top})`}>
+
+                    <line x1={0} x2={width} y1={height} y2={height} stroke={'black'} />
+                    {ticks_x.map( tickValue => {
+                            return <g key = {tickValue} transform={`translate(${xScale(tickValue)+5}, ${height+15})`}>
+                                    {/*<line y1={-10} y2={-20} stroke={'black'} /> */}
+                                <text style={{ textAnchor:'start', fontSize:'13px'} } transform = {'translate(0,0)'}>
+                                    {tickValue} 
+                                </text> 
+                            </g>
+                        })
+                    }
+                    <text x={width} y={height+5}>{"Platform"}</text>
+                    <text x={-20} y={-5}>{"Sales(million$)"}</text>
+
+                    <line x1={0} x2={0} y2={height} stroke={'black'} />
+                    {
+                        ticks_yu.map( tickValue => {
+                            return <g key = {tickValue} transform={`translate(0, ${yScaleu(tickValue)})`}>
+                                <line x1={-10} x2={0} stroke={'black'}/>
+                                
+                                <text x={-13} y={2} style={{ textAnchor:'end', fontSize:'8px'}}>
+                                    {tickValue}
+                                </text>
+                            </g>
+                        })
+                    }
+                    
+                   
+
+
+                
+                    {data.map( (d, idx) => {
+                        return <rect width={xScale.bandwidth()} height={yScaleu(0) - yScaleu(d.sales)} x={xScale(d.platform)} y={yScaleu(d.sales)}   opacity = {0.1}  fill="steelblue" />
+                    })}
+
+
+                
+
+                </g>
+        </svg>
+
+        }
+    }
+
+    function Tooltip_chart(props) {
+        const {d, platformData, left, top, height, width} = props;
+            if (platformData==0) {
+                return <div >
+                   
+                </div>;
+            } else {
+                return <div><p transform={`translate(${left}, ${top})`}>
+                       
+                        
+                        <BarChart offsetX={0} offsetY={0} height={height}
+                            width={width} data={platformData}/>
+                    </p>
+                    </div>
+            };  
+    }
+
+
+    const Game = () => {
+        const [tooltipX, setTooltipX] = React.useState(null);
+        const [tooltipY, setTooltipY] = React.useState(null);
+        const [firstAttr, setFirstAttr] = React.useState("region");
+        const [secondAttr, setSecondAttr] = React.useState("null");
+        const [selectedCell, setSelectedCell] = React.useState(null);
+        const [selectedNode, setSelectedNode] = React.useState(null);
+        //console.log(selectedCell);
+
+        const dataAll = useData(csvUrl);
+
+        const rawData = useData(csvUrl);
+        if (!rawData) {
+            return <p>
+                Loading...
+                </p>
+        }
+        const data = rawData
+        const innerWidth = WIDTH - margin.left - margin.right;
+        const innerHeight = HEIGHT - margin.top - margin.bottom;
+        const attributes = [ firstAttr, secondAttr].filter( d => d !== "null");
+        const onFristAttrChange = ( attr ) => {
+            setFirstAttr(attr);
+        }
+        const onSecondAttrChange = ( attr ) => {
+            setSecondAttr(attr);
+        }
+        
+        const tree_ = getTree(data, attributes);
+        const tree = {"name":"root", "children": tree_};
+        const options = [{value: "null", label: "None"},{value: "region", label: "region"}, {value: "genre", label: "genre"}];
+        
+        let platformData = 0;
+        //  console.log(selectedCell);
+        const data_filter = (selectedCell, data, length) => {
+
+            if (length==1){
+                return data.filter( d=> {
+                            return d[selectedCell[0].attr] == selectedCell[0].name
+                            }); 
+            } else {
+                return data.filter( d=> {
+                            return d[selectedCell[0].attr] == selectedCell[0].name & d[selectedCell[1].attr]==selectedCell[1].name
+                            }); 
+            }
+        }
+        
+        {
+         if(selectedCell){
+                if (!selectedCell[0].gname) {
+                    //.log(selectedCell.length)
+                    platformData = data_filter(selectedCell, data, selectedCell.length);
+                
+                        
+                        
+                }
+                }
+               
+            }
+        //console.log(platformData)
+        return <div >
+            <ScatterPlot x={margin.left} y={margin.top} width={WIDTH-300} height={HEIGHT-300} data={data}
+                selectedCell={selectedCell} setSelectedCell={setSelectedCell} attributes={attributes}/>
+                <ScatterPlot1 x={margin.left} y={margin.top} width={WIDTH-300} height={HEIGHT-300} data={data}
+                selectedCell={selectedCell} setSelectedCell={setSelectedCell} attributes={attributes}/> 
+                <br />
+            <Dropdown options={options} id={"selector1"} selectedValue={firstAttr} onSelectedValueChange={onFristAttrChange}/>
+            <Dropdown options={options} id={"selector2"} selectedValue={secondAttr} onSelectedValueChange={onSecondAttrChange} />
+            <br />
+
+            
+                <TreeMap width={WIDTH-200} height={HEIGHT} tree={tree}  selectedNode={selectedNode} 
+            setSelectedNode={setSelectedNode} selectedCell={selectedCell} setSelectedCell={setSelectedCell} setTooltipX={setTooltipX} setTooltipY={setTooltipY}/>
+            <br />
+            
+            <Tooltip_chart d={selectedCell} platformData={platformData} left={100} 
+            top={0} height={HEIGHT-100} width={WIDTH-500}/>
+            <Tooltip d={selectedNode} left={tooltipX} top={tooltipY}/>
+            
+                <br />
+
+
+
+
+        </div>
+    }
+    ReactDOM.render( <Game/>, document.getElementById('root'));
+    </script>
+    </body>
+    </html>
