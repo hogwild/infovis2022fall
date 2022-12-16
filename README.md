@@ -43,6 +43,6 @@ Also, you may [click here](https://docs.google.com/spreadsheets/d/1vc1nMsNyUHo0P
 - [Review the work](https://forms.gle/rZmNTSd6R1ZfjeXt5){:target="_blank"}
 
 ## [Team 8: Global Pandemics: Infection, Death, And Vaccination](./team8/index.html){:target="_blank"} 
-- Authors: Alivn Mo, Xingchen Gao
+- Authors: Alivn Mo, Xingchen Cao
 - [Review the work](https://forms.gle/NsFxBcTMQNCNizNr5){:target="_blank"}
 
